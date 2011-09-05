@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+		<title>AJAX Map Example</title>
+		<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+		<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>
+		<link rel="stylesheet" href="ajax_map_style.css" type="text/css" />
+		
+		<script>
+			var request = new XMLHttpRequest();
+			var landmark = new google.maps.LatLng(0, 0);
+			var myOptions = {
+						zoom: 13, // The larger the zoom number, the bigger the zoom
+						center: landmark,
+						mapTypeId: google.maps.MapTypeId.ROADMAP
+					};
+			var map;
+			var marker;
+			var infowindow = new google.maps.InfoWindow();
+			var info;
+			var progress = 10;
+				
+			function init()
+			{
+				info = document.getElementById("info");
+				map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+				info.innerHTML = 'Progress <progress id="indicator" value="' + progress + '" max="100"></progress>';
+				getLandmark();
+			}
+			
+			function getLandmark()
+			{
+				// 1. Communicate with server-side script to get response data (i.e., the JSON)
+				request.open("get", "acme.php", true);
+				
+				// 2. When there is a readyState change (that is, hopefully, we get response data back from acme.php), go to the renderMap() function
+				request.onreadystatechange = renderMap;
+				
+				// 3. Fire up the server communication
+				request.send(null);
+			}
+
+			function renderMap()
+			{
+				if (request.readyState == 4 && request.status == 200) {
+					// Okay so we got data, pull it out from the request XHR object
+					result = request.responseText;
+					parsed = JSON.parse(result);
+					landmarkLat = parsed['latitude'];
+					landmarkLng = parsed['longitude'];
+					landmarkName = parsed['note'];
+					landmark = new google.maps.LatLng(landmarkLat, landmarkLng);
+				
+					// Update map and go there...
+					map.panTo(landmark);
+	
+					// Create a marker
+					marker = new google.maps.Marker({
+						position: landmark,
+						title: landmarkName
+					});
+					marker.setMap(map);
+					
+					// Open info window on click of marker
+					google.maps.event.addListener(marker, 'click', function() {
+						infowindow.setContent(marker.title);
+						infowindow.open(map, marker);
+					});
+					document.getElementById("indicator").value = 100;
+				}
+				else if (request.readyState == 4 && request.status != 200){
+					info.innerHTML = "<h1>Something went terribly wrong!</h1>";
+				}
+				else if (request.readyState < 4 && request.readyState > 0) {
+					document.getElementById("indicator").value = ++progress;
+				}
+			}
+		</script>
+	</head>
+	
+	<body onload="init()">
+		<div id="map_canvas"></div>
+		<div id="info"></div>
+	</body>
+</html>
