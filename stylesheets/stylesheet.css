@@ -123,7 +123,10 @@ aside#sidebar p.repo-owner,
 aside#sidebar p.repo-owner a {
   font-weight: bold;
 }
-
+aside#sidebar p.news {
+  font-weight: bold;
+  font-size: 18px;
+}
 #downloads {
   margin-bottom: 40px;
 }
