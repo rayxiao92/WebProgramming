@@ -196,8 +196,9 @@
 			url: 'http://messagehub.herokuapp.com/news.json/20',
 			success: function(data) {
 				if (data.length > 0) {
+				    $("div#news_content").html("");
     				for (i = 0; i < data.length; i++) {
-    					$("div#news_content").html("<p>" + data[i]['created_at'] + ' - ' + linkify(data[i]['text']) + "</p>");
+    					$("div#news_content").append("<p>" + data[i]['created_at'] + ' - ' + linkify(data[i]['text']) + "</p>");
     				}	
 				}
 				else {
