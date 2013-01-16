@@ -2,3 +2,34 @@ tr th, td {
 	width: 33%;
 	text-align: left;
 }
+
+.yay {
+	color: green;
+}
+
+.note {
+	color: red;
+}
+
+.directions {
+	font-weight: bold;
+}
+
+
+.title {
+	font-style: italic;
+	font-weight: bold;
+}
+
+code {
+	font-weight: bold;
+}
+
+.stress {
+	font-style: italic;
+}
+
+.def {
+	font-style: italic;
+	font-weight: bold;
+}
