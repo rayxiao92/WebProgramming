@@ -47,7 +47,7 @@
 <li>The significance of SGML: <span class="stress">it "solves" the hard problem of computer understanding documents.</span>  That is, the meaning of things and interpretation of markups can be determined.</li>
 </ul>
 
-<h3>Hypertext Markup Language (HTML)</h3>
+<h3>HyperText Markup Language (HTML)</h3>
 <ul>
 <li>Created by Tim Berners-Lee (now at MIT) in 1991; inspired by SGML</li>
 <li><span class="stress">The idea</span>: determines document appearance and behavior</li>
@@ -95,6 +95,8 @@
 <li><code>&lt;pre&gt;</code><code>&lt;/pre&gt;</code> - Preformatted text in a fixed-width font (Courier).  Ideal to display a chunk of source code on a web page.</li>
 <li><code>&lt;div&gt;</code><code>&lt;/div&gt;</code> - Division; generic block element (more on this in CSS)</li>
 <li><code>&lt;table&gt;</code><code>&lt;/table&gt;</code> - Table</li>
+<li><code>&lt;form&gt;</code><code>&lt;/form&gt;</code> - Web form</li>
+
 </ul>
 </li>
 <li>Inline-level elements: affects a small region of text; must be nested inside a block-level element:
@@ -137,19 +139,14 @@
 <li>To a section in a document, specify name in document, then link to it using <code>#</code> in value of <code>href</code></li>
 <li>Example: <code>&lt;a href="../resources.php#software"&gt;Resources =&gt; Software&lt;/a&gt;</code>; make sure there is a <code>&lt;a name="software" /&gt;</code> in the <code>resources.php</code> page</li>
 <li>To open a link in a new browser window, use the attribute <code>target="_blank"</code></li>
-<li class="stress">Question 1: Why should you almost always use relative URLs for your website?</li>
-<li class="stress">Question 2: Give an example where you should use an absolute URL.</li>
 </ul>
 
 <h3>Images</h3>
 <ul>
 <li><code>&lt;img /&gt;</code></li>
 <li>The <code>src</code> attribute specifies the image URL</li>
-<li class="stress">Compliance with the <a href="http://www.section508.gov/" target="_blank">Section 508 Amendment to the Rehabilitation Act of 1973</a> requires the <code>alt</code> attribute to describe the image (alternative text). Why?</li>
 <li>If image is placed inside of an anchor tag, image will become a link.  To remove the link border, user the <code>border</code> attribute with value 0</li>
 <li>Example: <code>&lt;a href="http://www.google.com/" target="_blank"&gt;&lt;img src="http://www.google.com/intl/en_ALL/images/logo.gif" border="0" alt="Google" /&gt;&lt;/a&gt;</code>, Try it: <a href="http://www.google.com/" target="_blank"><img src="http://www.google.com/intl/en_ALL/images/logo.gif" border="0" alt="Google" /></a></li>
-<li>Good practice to also set <code>height</code> and <code>width</code> attributes for image.  Why?</li>
-<li class="stress">In HTML5 (which we will talk extensively in this course), the <code>border</code> attribute is prohibited for images.  Why?</li>
 </ul>
 
 <h3>Lists</h3>
@@ -348,7 +345,7 @@
 <li>Will be flexible with error handling (i.e., incorrect syntax).  Older browsers will safely ignore the new HTML5 syntax.</li>
 <li>W3C now validates HTML5 page. <a href="http://validator.w3.org/" target="_blank">http://validator.w3.org/</a>
 <ul>
-<li>Validate this page: <a href="http://validator.w3.org/check?uri=http%3A%2F%2Fwww.cs.tufts.edu%2Fcomp%2F20%2Flectures%2F02.php" target="_blank">http://validator.w3.org/check?uri=http%3A%2F%2Fwww.cs.tufts.edu%2Fcomp%2F20%2Flectures%2F02.php</a></li>
+<li>Validate this page: <a href="http://validator.w3.org/check?uri=http%3A%2F%2Ftuftsdev.github.com%2FWebProgramming%2Flecture_notes%2Fhtml.html&charset=%28detect+automatically%29&doctype=Inline&group=0" target="_blank">http://validator.w3.org/check?uri=http%3A%2F%2Ftuftsdev.github.com%2FWebProgramming%2Flecture_notes%2Fhtml.html&charset=%28detect+automatically%29&doctype=Inline&group=0</a></li>
 </ul>
 </li>
 </ul>
@@ -444,6 +441,15 @@
 </li>
 <li>NOTE: Many new elements such as <code>aside</code>, <code>header</code>, <code>footer</code>, <code>article</code>, <code>section</code>, and <code>nav</code> have no effect.  That is, the tag exists, the meaning of the tag exists, but the effect is undefined!</li>
 </ul>
+
+<h3>Questions</h3>
+<ol>
+<li>Why should you almost always use relative URLs for your website?</li>
+<li>Give an example where you should use an absolute URL.</li>
+<li>In HTML5 (which we will talk extensively in this course), the <code>border</code> attribute is prohibited for images.  Why?</li>
+<li>It is good practice to also set <code>height</code> and <code>width</code> attributes for image.  Why?</li>
+<li>Compliance with the <a href="http://www.section508.gov/" target="_blank">Section 508 Amendment to the Rehabilitation Act of 1973</a> requires the <code>alt</code> attribute to describe the image (alternative text). Why?</li>
+</ol>
 
 </section>
 </div>
