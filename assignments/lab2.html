@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='utf-8'>
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" type="text/css" href="../stylesheets/stylesheet.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="../stylesheets/pygment_trac.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="../stylesheets/print.css" media="print" />
+<link rel="stylesheet" type="text/css" href="../stylesheets/custom.css" media="screen" />
+
+<!--[if lt IE 9]>
+<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+
+<title>COMP 20: Web Programming - Lab 2</title>
+</head>
+    
+<body>
+<header>
+<div class="inner">
+<h1>Web Programming</h1>
+<h2>Lab 2: Using Chrome Developer Tools</h2>
+</div>
+</header>
+
+<div id="content-wrapper">
+<div class="inner clearfix">
+<section id="main-content">
+<h3>Lab Objectives</h3>
+<ol>
+<li>Practice using Chrome Developer Tools</li>
+<li>Understand how HTTP communications work</li>
+<li>Dissect HTTP responses and request headers</li>
+</ol>
+
+<h3>Overview</h3>
+<p>Chrome Developer Tools "allows web developers and programmers deep access into the internals of the browser and their web application."  Throughout this course, you will be using Chrome Developer Tools heavily, including debugging and finding bugs, inspecting assets and resources for a web page or web application, and measuring performance.  In this lab, you will practice using Chrome Developer Tools to understand how HTTP works.</p>
+<p>Please note that most of the functions of Chrome Developer Tools are also available in Firebug for the Firefox web browser.  Firebug is an add-on that you must install for Firefox: <a href="https://addons.mozilla.org/en-us/firefox/addon/firebug/" target="_blank">https://addons.mozilla.org/en-us/firefox/addon/firebug/</a>.</p>
+
+<h3>Instructions</h3>
+<p>You will answer each question online at <a href="https://docs.google.com/spreadsheet/viewform?formkey=dFV1YlQwMmhNYi14SHc3Yy0wVHd2LXc6MQ" target="_blank">https://docs.google.com/spreadsheet/viewform?formkey=dFV1YlQwMmhNYi14SHc3Yy0wVHd2LXc6MQ</a>.</p>
+
+<p>In Chrome, open a new window and open Chrome Developer Tools on the window.</p>
+
+<p>Visit <code>http://www.cs.tufts.edu/comp/20/examples/lab2.html</code>. Cut-and-paste the URL into the URL bar in the window with Chrome Developer Tools enabled.  Then click the return button on your keyboard.  Click on the "Resources" panel of Chrome Developer Tools.</p>
+
+<p>1. How many requests were made for the page?</p>
+
+<p>2. How many kilobytes of data were transferred?</p>
+
+<p>3. What is the status code for each of the requests?</p>
+
+<p>4. Click on the <code>conditioning.png</code> image and view the HTTP header details under the "Headers" tab.  What is the web server software, and version, used by the Tufts Department of Computer Science?</p>
+
+<p>5. Click on the "Timing" tab for the <code>conditioning.png</code> image. While retrieving the image, what was most of the time being spent on?</p>
+
+<p>Now refresh the page.</p>
+
+<p>6. What is the status code for each of the requests?  If the status code is different than the one in question 3, explain why.</p>
+
+<p>Now visit <code>http://www.cs.tufts.edu/comp/20/examples/lab2.php</code>. Cut-and-paste the URL into the URL bar in the window with Chrome Developer Tools enabled.  Then click the return button on your keyboard.  Click on the "Resources" panel of Chrome Developer Tools.</p>
+
+<p>7. How many requests were made?</p>
+
+<p>8. What is the file extension of the file?</p>
+
+<p>9. What is the <code>content-type</code> of the file?  You can find this information by dissecting the HTTP response header.</p>
+
+<p>Just for fun: refresh the page.  Notice the status code of the file each time you refresh the page.</p>
+
+<p>Now visit <code>http://messagehub.herokuapp.com/</code> Cut-and-paste the URL into the URL bar in the window with Chrome Developer Tools enabled.  Then click the return button on your keyboard.  Click on the "Resources" panel of Chrome Developer Tools. <span class="stress">DON'T DO A THING, STAY ON THE PAGE.  Notice the number of requests.</span></p>
+
+<p>10. Is there a content or file that is constantly being retrieved?  If so, what is the name of the content or file?</p>
+
+<p>Just for fun: notice if the content changes.  Keep an eye on the status codes.</p>
+
+<h3>References</h3>
+<ul>
+<li><a href="https://developers.google.com/chrome-developer-tools/docs/overview" target="_blank">https://developers.google.com/chrome-developer-tools/docs/overview</a></li>
+</ul>
+
+</section>
+</div>
+</div>
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-582953-9");
+pageTracker._trackPageview();
+} catch(err) {}
+</script>
+
+</body>
+</html>
