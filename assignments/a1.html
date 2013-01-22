@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+<title>COMP 20: Web Programming - Assignment 1</title>
+
+<?php
+	require_once("../header.php");
+?>
+
+<div id="nav">
+<h4>Navigation</h4>
+<ul>
+<li><a href="../index.php">Course Information</a></li>
+<li><a href="../news.php">News</a></li>
+<li><a href="../lectures/">Syllabus and Lectures</a></li>
+<li><a href="index.php" id="current">Assignments</a></li>
+<li><a href="../resources.php">References and Resources</a></li>
+</ul>
+</div>
+
+<div id="content">
+<h2>Assignment 1: Setting Up GitHub and Your Tufts CS Web Directory</h2>
+<h3>Due: Tuesday, May 31st at 1 PM</h3>
+<p class="note">This assignment is worth 5 points.</p>
+
+<h3>Overview</h3>
+<p>In this rudimentary assignment, you will use SSH, Git, and the terminal.  Perhaps you will also learn a little about Unix commands and asymmetric cryptography (e.g., public-private keys).</p>
+
+<h3>Part 1: Instructions</h3>
+<p>Go to <a href="http://help.github.com/" target="_blank">http://help.github.com/</a> and follow the instructions in "Set Up Git" for your respective operating system.</p>
+
+<h3>Part 1: Submission</h3>
+<p>Please e-mail me your GitHub login (a.k.a., your username).  I will then create you a private repository for all your work in this class.</p>
+
+<h3>Part 2: Setting Up Your Tufts CS Web Directory</h3>
+
+<p><span class="stress">(Most of this document is from the Tufts CS &amp; ECE Systems User Guide)</span></p>
+<p>Tufts CS provides a cluster for Unix logins (as well as two workstation labs running Red Hat Enterprise Linux in Halligan 116 and 118):</p>
+<ul>
+<li><code>linux.cs.tufts.edu</code></li>
+</ul>
+
+<p><span class="note">If you have not done so already, activate or reset your Tufts CS Unix account at <a href="https://www.eecs.tufts.edu/~accounts/" target="_blank">https://www.eecs.tufts.edu/~accounts/</a>.</span></p>
+
+<p>With your Tufts CS account, you can create a personal website that will be available at:</p>
+
+<p><code>http://www.cs.tufts.edu/~user_name/</code></p>
+
+<p>or</p>
+
+<p><code>http://www.ee.tufts.edu/~user_name/</code></p>
+
+<p>In order to setup your website, you need to create a folder called <code>public_html</code> in your "home directory" (which is usually your current location after you have successfully logged on).  This folder will appear to be the root of your personal website.</p>
+
+<p>You will set the correct permissions on your "home directory" and the <code>public_html</code> directories.  This can be accomplished by executing the following commands (assume that your login / username is <code>lsimpson</code> and your command prompt is <code>&gt;</code>):</p>
+
+<ol>
+<li>Log on to <code>linux.cs.tufts.edu</code></li>
+<li><code>lsimpson ~/work/project/ &gt; cd ~</code></li>
+<li><code>lsimpson ~/ &gt; mkdir public_html</code></li>
+<li><code>lsimpson ~/ &gt; chmod 755 public_html</code></li>
+<li><code>lsimpson ~/ &gt; chmod 711 ~</code></li>
+</ol>
+
+<p>The default file for your website must be named <code>index.html</code>.  Without this file, visitors to your website will see a listing of the files you have in your <code>public_html</code> directory.</p>
+
+<p class="note">As you create new files and directories, you must verify that they have the proper permissions set.  The proper setting for files is <code>644</code>, and directories is <code>755</code>.</p>
+
+<p>You can set these by executing:</p>
+<ol>
+<li><code>lsimpson ~/ > chmod 755 &lt;directory_name&gt;</code></li>
+<li><code>lsimpson ~/ > chmod 644 &lt;file_name&gt;</code></li>
+</ol>
+
+<p>If one of these steps is not completed, you will get the 403 error (status code).</p>
+
+<h3>Logging On to Tufts CS System</h3>
+
+<h4>Microsoft Windows</h4>
+<p>1. Download SSH Secure Shell: <a href="SSHSecureShellClient-3.2.9.exe">SSHSecureShellClient-3.2.9.exe</a>.  SSH Secure Shell provides support for both shell access and file transfer.  This is the last version of the SSH Secure Shell available free for non-commercial and university use.  This is no longer available through SSH.com ($ reason).</p>
+<p>2. Add a "profile" for Tufts CS (you can name it whatever you want).</p>
+<p><img src="../images/ssh_01.png" alt="SSH" /></p>
+<p><img src="../images/ssh_02.png" alt="SSH" /></p>
+<p>3. Edit the profile that you created.  Enter the host name and your user name (your Tufts CS Unix login).</p>
+<p><img src="../images/ssh_03.png" alt="SSH" /></p>
+<p>4. Connect to the server by selecting the profile.  You may be prompted to accept a key --do so.  Then enter your password.</p>
+<p>5. You are in!  Your screen should look like the following:</p>
+<p><img src="../images/ssh_04.png" alt="SSH" /></p>
+<p>5A. You can now run a plethora of packages and Unix commands.  See below.</p>
+<p>6. Follow the instructions above to create your <code>public_html</code> directory.</p>
+<p>7. Use the Secure File Transfer client that comes with SSH Secure Shell to upload files to your account.  You can drag-and-drop files from your computer to your account on the Tufts CS server.</p>
+<p><img src="../images/ssh_05.png" alt="SSH" /></p>
+<p><img src="../images/ssh_06.png" alt="SSH" /></p>
+<p><img src="../images/ssh_07.png" alt="SSH" /></p>
+<p class="note">NOTE: SSH Secure Shell is no longer supporter by SSH.  Another alternative: <a href="http://www.chiark.greenend.org.uk/~sgtatham/putty/" target="_blank">PuTTY</a>.</p>
+
+<h4>Mac OS X, Linux</h4>
+<p>SSH and SCP directly from Terminal via <code>ssh username@hostname</code>.  Example: <code>ssh mchow@linux.cs.tufts.edu</code>.  To find Terminal, open Hard Drive -&gt; Applications Folder -&gt; Utilities Folder -&gt; Terminal).</p>
+
+<h4>Secure File Transfer via FileZilla (Mac OS X, Windows, Linux)</h4>
+<p>Secure file transfer programs such as sftp and <a href="http://filezilla-project.org/" target="_blank">FileZilla</a> should work without trouble on the CS systems.  FileZilla is recommended for Mac OS X and Linux for secure file transfer.  It is also popular for Windows.</p>
+
+</div>
+
+<?php
+	require_once("../footer.php");
+?>
