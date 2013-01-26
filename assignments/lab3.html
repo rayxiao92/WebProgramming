@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='utf-8'>
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" type="text/css" href="../stylesheets/stylesheet.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="../stylesheets/pygment_trac.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="../stylesheets/print.css" media="print" />
+<link rel="stylesheet" type="text/css" href="../stylesheets/custom.css" media="screen" />
+
+<!--[if lt IE 9]>
+<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+
+<title>COMP 20: Web Programming - Lab 3</title>
+</head>
+    
+<body>
+<header>
+<div class="inner">
+<h1>Web Programming</h1>
+<h2>Lab 3: OMFGDOGS</h2>
+</div>
+</header>
+
+<div id="content-wrapper">
+<div class="inner clearfix">
+<section id="main-content">
+
+<p class="note">This lab is worth 3 points.</p>
+
+<h2>Lab Objectives</h2>
+<ul>
+<li>Practice writing good-form HTML.</li>
+<li>Practice writing CSS.</li>
+<li>Start to understand the benefits of HTML5.</li>
+</ul>
+
+<h2>Overview</h2>
+<p><img src="http://mchow01.github.com/omfgdogs/omfgdogs.gif" alt="OMFGDOGS!" /></p>
+
+<p>OMFGDOGS (<a href="http://www.omfgdogs.com/" target="_blank">http://www.omfgdogs.com/</a>) was one of the best useless websites in 2012.  It made a splash at ROFLCon last May at MIT.  OMFGDOGS is now one of the great memes along with the Hampster Dance and Nyan Cat.  One problem: OMFGDOGS uses Flash.  It doesn't have to be.</p>
+
+<h2>Instructions</h2>
+<p>Using HTML5 and CSS, recreated OMFGDOGS without Flash by writing two files: <code>index.html</code> and <code>omfgdogs.css</code>.  The animated gif shall cover the entire body of the web browser and the tune shall play on page load.</p>
+<p>Two assets will be provided for you:</p>
+<ol>
+<li>The animated GIF <code>omfgdogs.gif</code></li>
+<li>The tune <code>omfgdogs.mp3</code></li>
+</ol>
+
+<p>You must also put a link to the original OMFGDOGS website <a href="http://www.omfgdogs.com/" target="_blank">http://www.omfgdogs.com/</a> at the <span class="stress">bottom-right corner of the page</span> to give credit where credit is due.</a>.  I urge you to use a bigger text size, different font, text colors other than black or blue.</p>
+
+<h2>Getting Started</h2>
+<ol>
+<li>If you haven't done so already, clone a copy of the <code>running-dogs</code> repository that you forked in <a href="lab1.html">Lab 1</a>.  Assuming that you have created your keys correctly for secure communications between your computer and GitHub, the SSH URI for the repository should be something like <code>git@github.com:<span class="stress">YOUR_GITHUB_USERNAME</span>/running-dogs.git</code>. Thus, run: <code>git clone git@github.com:<span class="stress">YOUR_GITHUB_USERNAME</span>/running-dogs.git</code></li>
+<li>Inside the <code>running-dogs</code> repo, run <code>git remote add upstream https://github.com/tuftsdev/running-dogs.git</code> to keep track of the original repo that I created.</li>
+<li>Inside the <code>running-dogs</code> repo, run <code>git fetch upstream</code> <span class="stress">and</span> <code>git merge upstream/master</code> to pull in the changes that I made to the original <code>running-dogs</code> repo.</li>
+<li>The animated GIF and the MP3 files are in the <code>assets</code> folder.</li>
+<li>Create your files <code>index.html</code> and <code>omfgdogs.css</code> in <code>running-dogs</code>. Do not put the files anywhere else.</li>
+</ol>
+
+<!-- So I ripped this off from Norman Ramsey at http://www.cs.tufts.edu/comp/105/details.html -->
+<h2><span class="note">(Course Policy)</span> The <code>README</code> File</h2>
+<p>Every assignment shall include a <code>README</code> file that describes the work. This description must:</p>
+<ol>
+<li>Identify what aspects of the work have been correctly implemented and what have not.</li>
+<li>Identify anyone with whom you have collaborated or discussed the assignment.</li>
+<li>Say approximately how many hours you have spent completing the assignment.</li>
+<li>Be written in either text format (thus <code>README.txt</code>) or in Markdown (thus <code>README.md</code>).</li>
+</ol>
+
+<h2>Viewing Your Work</h2>
+<p>Open the <code>index.html</code> page on Chrome, Firefox, or the Safari web browsers.</p>
+<p>Should you want to make your work viewable on the web, either push all the files to your special repo on GitHub (see <a href="a1.html">Assignment 1</a>) or upload all files to your <code>public_html</code> directory in your Tufts CS account.</p>
+
+<h2>Submitting Your Lab</h2>
+<p>Push all your files to your forked copy of the <code>running-dogs</code> repo.</p>
+<pre>
+git add .
+git commit -m "<span class="stress">Some good commit message</span>"
+git push
+</pre>
+
+</section>
+</div>
+</div>
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-582953-9");
+pageTracker._trackPageview();
+} catch(err) {}
+</script>
+
+</body>
+</html>
