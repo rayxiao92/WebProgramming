@@ -1,87 +1,17 @@
-In this simple HTML example, we will use this block of text:
+Good Form HTML Commandments
+===========================
 
-There's a fire starting in my heart, 
-Reaching a fevered pitch and it's bringing me out the dark.
-Finally, I can see you crystal clear, 
-Go ahead and sell me out and I'll lay your ship bare, 
-See how I'll leave with every piece of you, 
-Don't underestimate the things that I will do. 
-
-There's a fire starting in my heart, 
-Reaching a fever pitch and it's bring me out the dark.
-
-The scars of your love remind me of us, 
-They keep me thinking that we almost had it all.
-The scars of your love, they leave me breathless, 
-I can't help feeling, 
-
-We could have had it all, 
-(Your gonna wish you, never had met me) 
-Rolling in the deep, 
-(Tears are gonna fall, rolling in the deep)
-You had my heart inside your hand, 
-(You're gonna wish you never had met me)
-And you played it to the beat.
-(Tears are gonna fall, rolling in the deep)
-
-Baby, I have no story to be told, 
-But I've heard one on you and I'm gonna make your head burn, 
-Think of me in the depths of your despair, 
-Making a home down there as mine sure won't be shared,
-
-The scars of your love remind me of us, 
-(You're gonna wish you never had met me)
-They keep me thinking that we almost had it all.
-(Tears are gonna fall, rolling in the deep)
-The scars of your love, they leave me breathless, 
-(You're gonna wish you never had met me)
-I can't help feeling, 
-(Tears are gonna fall, rolling in the deep)
-
-We could have had it all, 
-(You're gonna wish you never had met me) 
-Rolling in the deep.
-(Tears are gonna fall, rolling in the deep)
-You had my heart inside your hand, 
-(You're gonna wish you never had met me)
-And you played it to the beat.
-(Tears are gonna fall, rolling in the deep)
-
-Could have had it all, 
-Rolling in the deep, 
-You had my heart inside of your hands, 
-But you played it with a beating.
-
-Throw your soul through every open door, 
-Count your blessings to find what you look for.
-Turn my sorrow into treasured gold, 
-You'll pay me back in kind and reap just what you've sown.
-
-(You're gonna wish you never had met me)
-We could have had it all, 
-(Tears are gonna fall, rolling in the deep)
-We could have had it all.
-(You're gonna wish you never had met me), 
-It all, it all, it all.
-(Tears are gonna fall, rolling in the deep)
-
-We could have had it all, 
-(You're gonna wish you never had met me)
-Rolling in the deep.
-(Tears are gonna fall, rolling in the deep
-You had my heart inside of your hand, 
-(You're gonna wish you never had met me)
-And you played it to the beat.
-(Tears are gonna fall, rolling in the deep)
-
-Could have had it all, 
-(You're gonna wish you never had met me) 
-Rolling in the deep.
-(Tears are gonna fall, rolling in the deep)
-You had my heart inside of your hands, 
-(You're gonna wish you never had met me
-
-But you played it, 
-You played it, 
-You played it, 
-You played it to the beat.
+1. Thou shall not use the extension .htm.
+2. Thou shall not use whitepace in file name.
+3. Thou shall not use uppercase letters in file name.
+4. Thou shall encode reserved characters such as &, <, and > with respective HTML entity.
+5. Thou shall close all tags (some tags open and close in one).
+6. Thou shall close the most recently opened tag first, thus proper nesting.
+7. Thou shall surround values for attributes with double quotes.
+8. Thou shall never forget important attributes for some HTML tags (e.g., alt for <img>).
+9. Thou shall not use HTML for styling (e.g., <center>, border attribute).
+10. Thou shall not use inline styling in HTML.
+11. Thou shall not absolute URIs all the time.
+12. Thou shall not write too many HTML comments.
+13. Thou shall always give an HTML page a title in the <head> section.
+14. Thou shall always validate HTML markup at http://validator.w3.org/.
