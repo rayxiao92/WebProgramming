@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='utf-8'>
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" type="text/css" href="../stylesheets/stylesheet.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="../stylesheets/pygment_trac.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="../stylesheets/print.css" media="print" />
+<link rel="stylesheet" type="text/css" href="../stylesheets/custom.css" media="screen" />
+
+<!--[if lt IE 9]>
+<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+
+<title>COMP 20: Web Programming - Setting Up Your Tufts CS Web Directory<</title>
+</head>
+    
+<body>
+<header>
+<div class="inner">
+<h1>Web Programming</h1>
+<h2>Setting Up Your Tufts CS Web Directory</h2>
+</div>
+</header>
+
+<div id="content-wrapper">
+<div class="inner clearfix">
+<section id="main-content">
+
+<h2>Overview</h2>
+<p>Any student taking a class with the Tufts University Department of Computer Science is given an email address <code><span class="stress">YOUR_LOGIN</span>@cs.tufts.edu</code> and 50 MB of web hosting space.  <span class="note">IMPORTANT: using Tufts CS resources for malicious (e.g., spam) or commercial purposes (e.g., a startup) will result in explusion from the University!</span></p>
+
+<p>Starting in spring 2013, the COMP 20 class will not be using <code>linux.cs.tufts.edu</code> for labs and assignments due to security concerns.  Another web server will be used.</p>
+
+<h2>Instructions</h2>
+<p><span class="stress">(Most of this document is from the Tufts CS &amp; ECE Systems User Guide)</span></p>
+<p>Tufts CS provides a cluster for Unix logins (as well as two workstation labs running Red Hat Enterprise Linux in Halligan 116 and 118):</p>
+<ul>
+<li><code>linux.cs.tufts.edu</code></li>
+</ul>
+
+<p><span class="note">If you have not done so already, activate or reset your Tufts CS Unix account at <a href="https://www.eecs.tufts.edu/~accounts/" target="_blank">https://www.eecs.tufts.edu/~accounts/</a>.</span></p>
+
+<p>With your Tufts CS account, you can create a personal website that will be available at:</p>
+
+<p><code>http://www.cs.tufts.edu/~user_name/</code></p>
+
+<p>or</p>
+
+<p><code>http://www.ee.tufts.edu/~user_name/</code></p>
+
+<p>In order to setup your website, you need to create a folder called <code>public_html</code> in your "home directory" (which is usually your current location after you have successfully logged on).  This folder will appear to be the root of your personal website.</p>
+
+<p>You will set the correct permissions on your "home directory" and the <code>public_html</code> directories.  This can be accomplished by executing the following commands (assume that your login / username is <code>lsimpson</code> and your command prompt is <code>&gt;</code>):</p>
+
+<ol>
+<li>Log on to <code>linux.cs.tufts.edu</code></li>
+<li><code>lsimpson ~/work/project/ &gt; cd ~</code></li>
+<li><code>lsimpson ~/ &gt; mkdir public_html</code></li>
+<li><code>lsimpson ~/ &gt; chmod 755 public_html</code></li>
+<li><code>lsimpson ~/ &gt; chmod 711 ~</code></li>
+</ol>
+
+<p>The default file for your website must be named <code>index.html</code>.  Without this file, visitors to your website will see a listing of the files you have in your <code>public_html</code> directory.</p>
+
+<p class="note">As you create new files and directories, you must verify that they have the proper permissions set.  The proper setting for all files within <code>public_html</code> is <code>644</code>, and for all directories is <code>755</code>.</p>
+
+<p>You can set these by executing:</p>
+<ol>
+<li><code>lsimpson ~/ > chmod 755 &lt;directory_name&gt;</code></li>
+<li><code>lsimpson ~/ > chmod 644 &lt;file_name&gt;</code></li>
+</ol>
+
+<p>If one of these steps is not completed, you will get the 403 error (status code).</p>
+
+<h2>Transfer Files From Your Computer to <code>linux.cs.tufts.edu</code> via <code>scp</code> on Mac OS X and Linux</h2>
+<p><code>scp</code> securely copies files between hosts on a network.  To learn more about <code>scp</code>, run <code>man scp</code> on the terminal.</p>
+
+<p>Say that user <code>lsimpson</code> has two files: <code>index.html</code> and <code>smiley.png</code> in her home directory on her local computer.  To transfer them her <code>public_html</code> directory on <code>linux.cs.tufts.edu</code>, she would run:</p>
+
+<pre>
+scp index.html smiley.png lsimpson@linux.cs.tufts.edu:~/public_html
+</pre>
+
+<h2>Secure File Transfer via FileZilla (Mac OS X, Windows, Linux)</h2>
+
+<p><a href="http://filezilla-project.org/" target="_blank">FileZilla</a> can also be used to transfer files from a local computer to Tufts CS, vice versa.  Please refer to this screenshot for setup: <a href="http://twitpic.com/2p4ve6" target="_blank">http://twitpic.com/2p4ve6</a></p>
+</section>
+</div>
+</div>
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-582953-9");
+pageTracker._trackPageview();
+} catch(err) {}
+</script>
+
+</body>
+</html>
