@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='utf-8'>
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" type="text/css" href="../stylesheets/stylesheet.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="../stylesheets/pygment_trac.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="../stylesheets/print.css" media="print" />
+<link rel="stylesheet" type="text/css" href="../stylesheets/custom.css" media="screen" />
+
+<!--[if lt IE 9]>
+<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+
+<title>COMP 20: Web Programming - Assignment 2</title>
+</head>
+    
+<body>
+<header>
+<div class="inner">
+<h1>Web Programming</h1>
+<h2>Assignment 2: Frogger</h2>
+<h2>Due: Sunday, February 17th at 11:59 PM</h2>
+</div>
+</header>
+
+<div id="content-wrapper">
+<div class="inner clearfix">
+<section id="main-content">
+
+<h2>Objectives</h2>
+<ol>
+<li>Program with JavaScript.</li>
+<li>Use the Document Object Model.</li>
+<li>Render 2D graphics on the web browser with HTML5's canvas.</li>
+</ol>
+
+<h2>Overview</h2>
+<p>The title of this assignment says it all.  In this assignment, you will build a working version of Frogger using JavaScript, playable on the web browser.</p>
+<p>The goal of the game is to maneuver the frog using the arrow keys UP, DOWN, LEFT, RIGHT from the bottom of the screen to cross the busy road, across the river, and to one of the pads --without getting run over by a vehicle, drown, or eaten by an alligator.</p>
+<p><img src="../images/frogger.png" alt="frogger" /></p>
+<p>If you have never played Frogger before, you can play it online at <a href="http://www.playfrogger.org/">http://www.playfrogger.org/</a>.</p>
+
+<h2>Instructions</h2>
+<p>You will write one file: <code>game.js</code> that contains all the game logic including initialization, rendering all the graphics, handing keypresses, and animation.</p>
+<p>Programming should be done on your local computer.</p>
+
+<h2>Getting Started</h2>
+
+<h2>Running the Game</h2>
+<p>Open the <code>index.html</code> file on a web browser on your web browser --preferably Chrome, Firefox, Safari, or the latest version of Microsoft Internet Explorer.</p>
+<p>It is recommended that you do not make your game publicly accessibly on the web.</p>
+
+<!-- So I ripped this off from Norman Ramsey at http://www.cs.tufts.edu/comp/105/details.html -->
+<h2><span class="note">(Course Policy)</span> The <code>README</code> File</h2>
+<p>Every assignment shall include a <code>README</code> file that describes the work. This description must:</p>
+<ol>
+<li>Identify what aspects of the work have been correctly implemented and what have not.</li>
+<li>Identify anyone with whom you have collaborated or discussed the assignment.</li>
+<li>Say approximately how many hours you have spent completing the assignment.</li>
+<li>Be written in either text format (thus <code>README.txt</code>) or in Markdown (thus <code>README.md</code>). No other formats will be accepted.</li>
+</ol>
+
+<!-- So I ripped this off from Norman Ramsey at http://www.cs.tufts.edu/comp/105/details.html -->
+<h2><span class="note">(Course Policy)</span> The Late Policy</h2>
+<p>Homework that is submitted electronically (most homework) will typically be due at 11:59 PM on a Monday or Wednesday or at 5:59 PM on a Friday. We will grant an automatic extension of ten minutes at no cost to you. If you plan on submitting your work at midnight or at six, you will have nine minutes for last-minute changes.</p>
+<p>Homework is expected to be submitted on time. However, we recognize that the exigencies of college life occasionally interfere with on-time submission. If you have difficulty getting homework in on time, you have two options:</p>
+<ol>
+<li>For ordinary difficulties, each student is automatically issued six "extension tokens." By expending an extension token, you can get an automatic 24-hour extension on all deadlines associated with a single assignment.  To use an extension token, you must e-mail me at <code>mchow@cs.tufts.edu</code>. Thus must be sent before the assignment is due.  At most two extension tokens may be expended on any single assignment.  When you are out of tokens, late homework will no longer be accepted: it will be returned ungraded, and you will receive no credit for the work.</li>
+<li>If a serious illness affects your ability to complete homework on time, your first step is to report the illness using the "Illness Notification Form" that is available in WebCenter for Students. We will make suitable arrangements. For extraordinary difficulties, such as bereavement, family emergencies, or other extraordinary unpleasant events, your first step should be to make contact with your associate dean for undergraduate education. You must take this step before the assignment is due. Ask your dean to drop me an email or give me a call, and we will make special arrangements that are suited to your circumstances.</li>
+</ol>
+
+<p>Please understand that extension tokens are meant to be used.  That is, you will not receive any special bonus at the end of the course if you do not use any of your extension tokens.</p>
+<p>Solutions to assignments and labs will not be posted for this course.</p>
+
+<h2>Assessment Rubric</h2>
+<p>For this assignment, you will be assessed on a scale: from "excellent" to "no credit."  This is also the similar scale used by the National Science Foundation.</p>
+<ul>
+<li><span class="stress">Excellent</span> - (equivalent to a 95); documentation addresses exactly the key issues, and degree of detail is exactly appropriate; no errors on the JavaScript console; well thought out and implemented code; winning and losing conditions in the game exist; completely animated sprites (e.g., frog, obstacles); collisions are detected; scoring exist; lives exist</li>
+<li><span class="stress">Very Good</span> - (equivalent to an 85); high quality in nearly all respects; documentation addresses most key issues, with a good amount of detail; no errors on the JavaScript console; well chosen names for functions and their parameters; game is functional with non-moving; collisions are detected.</li>
+<li><span class="stress">Good</span> - (equivalent to a 75); demonstrates quality and significant learning; documentation covers some key issues; individual functions are organized and readable; most names chosen well, but their may be some exceptions; JavaScript errors exist in console; errors may be evident from reading the code; graphics are rendered; game is functional by moving the frog from starting point to lilly pad; animation of frog exists</li>
+<li><span class="stress">Fair</span> - (equivalent to a 65); the lowest satisfactory grade; very little documentation; unreadable code; errors appear in JavaScript console; game does not work but graphics are rendered</li>
+<li><span class="stress">Poor</span> - (equivalent to a 55); an unsatisfactory grade; work shows little evidence of effort or has other serious deficiencies; no documentation (e.g., no <code>README</code>); game does not work; no graphics rendered; errors appear in JavaScript console.</li>
+<li><span class="stress">No Credit</strong> - (equivalent to a 0); for work not turned in, for parts that are incomplete, or for work that is non-functional or appears to bear no relation to the problems assigned. <span class="note">You will receive No Credit for work that you cannot explain!</span></li>
+<li><span class="stress">Uber</span> - (equivalent to a 105, BONUS!) game has all the bell-and-whistles including sound, level progression (i.e., game gets progressively harder), and tracking high scores</li>
+</ul>
+
+<h2>Submitting the Lab</h2>
+<p>Push all the files to the private repository that I created for you in a folder named <code>frogger</code>.  Say that your private repository is named <code>mchow-comp20</code>, make sure all the files are pushed to <code>mchow-comp20/frogger</code>.</p>
+</section>
+</div>
+</div>
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-582953-9");
+pageTracker._trackPageview();
+} catch(err) {}
+</script>
+
+</body>
+</html>
