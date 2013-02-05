@@ -21,7 +21,7 @@
 <header>
 <div class="inner">
 <h1>Web Programming</h1>
-<h2>Assignment 2: Frogger</h2>
+<h2>Assignment 2: Frogger, Part I</h2>
 <h2>Due: Sunday, February 17th at 11:59 PM</h2>
 </div>
 </header>
@@ -38,20 +38,56 @@
 </ol>
 
 <h2>Overview</h2>
-<p>The title of this assignment says it all.  In this assignment, you will build a working version of Frogger using JavaScript, playable on the web browser.</p>
+<p>The title of this assignment says it all.  In this assignment, you will start to build a working version of Frogger using JavaScript, playable on the web browser.</p>
 <p>The goal of the game is to maneuver the frog using the arrow keys UP, DOWN, LEFT, RIGHT from the bottom of the screen to cross the busy road, across the river, and to one of the pads --without getting run over by a vehicle, drown, or eaten by an alligator.</p>
 <p><img src="../images/frogger.png" alt="frogger" /></p>
 <p>If you have never played Frogger before, you can play it online at <a href="http://www.playfrogger.org/">http://www.playfrogger.org/</a>.</p>
 
 <h2>Instructions</h2>
-<p>You will write one file: <code>game.js</code> that contains all the game logic including initialization, rendering all the graphics, handing keypresses, and animation.</p>
+<p>You will write one file: <code>game.js</code>.  This file contains all the game logic including initialization, rendering all the graphics, handing keypresses, and animation.</p>
+
+<p>For this assignment, you will write the methods to initialize a game and render graphics to the canvas.</p>
+
 <p>Programming should be done on your local computer.</p>
 
 <h2>Getting Started</h2>
+<p>Starting with this assignment, you will be provided a <span class="stress">private</span> GitHub repo for submitting assignments.  You will be emailed the name of your private repo.  This email will be sent to you at the e-mail address you provided in Lab 1.  The only two people who will have access to this special repo will be me (the instructor), the TAs, and you.</p>
+<ol>
+<li>Check your email for the name of your private repository. Make sure you can see it under your list of repositories by logging on to GitHub.</li>
+<li>Make a clone of your private repository (which will be initially empty) onto your computer.</li>
+<li>Download and unzip the file <code><a href="frogger.zip">frogger.zip</a></code> directly into your private repository.</li>
+<li>Remove the ZIP file <code>frogger.zip</code></li>
+</ol>
+<p>You are provided with five files:</p>
+<ol>
+<li><code>index.html</code> - HTML page with a canvas</li>
+<li><code>style.css</code> - The stylesheet</li>
+<li><code>assets/dead_frog.png</code> - Image of the frog getting killed; to be used when frog is run over by a vehicle, eaten, or drowns.</li>
+<li><code>assets/frogger_sprites.png</code> - A sprite sheet containing all the images, sprites, necessary for the game.</li>
+<li><code>game.js</code> - Where you will write all your JavaScript code.</li>
+</ol>
 
-<h2>Running the Game</h2>
-<p>Open the <code>index.html</code> file on a web browser on your web browser --preferably Chrome, Firefox, Safari, or the latest version of Microsoft Internet Explorer.</p>
-<p>It is recommended that you do not make your game publicly accessibly on the web.</p>
+<p class="note">You are not allowed to create additional stylesheets or HTML files.</p>
+
+<h2>About Sprite Sheets</h2>
+<p>One of the issues that you discovered in Lab 2 is that when assets are loaded for a web page (e.g., images, stylesheets), a lot of time is spent on waiting, the time between sending the HTTP request and receiving an HTTP response.  Games typically use lots of images.  If there are lots of individual images to be downloaded, then the total amount of time spent waiting will be high.  A way to alleviate the waiting problem is to only have one image, but the image contains all the images necessary for the game.  This image is better known as a <span class="stress">sprite sheet</span>.  In this assignment, the image <code>assets/frogger_sprites.png</code> is a sprite sheet.</p>
+
+<h2>The JavaScript Canvas API</h2>
+<p>A canvas is simply a drawing area.  HTML5 introduces a new element called <code>&lt;canvas&gt;</code>.  Drawing can be done onto the canvas via of the JavaScript Canvas API.  The Canvas API contains many powerful methods: from drawing lines to image manipulation.  The API also contains a method, <code>drawImage()</code> that allows <span class="stress">slicing</span> an image.  That is, only draw parts of an image onto the canvas.  Please refer to <a href="http://www.w3schools.com/tags/canvas_drawimage.asp" target="blank">http://www.w3schools.com/tags/canvas_drawimage.asp</a> for the parameters and usage of <code>drawImage()</code>.</p>
+
+<h2>Preparing for Part II</h2>
+<p>Games require animation and animation requires constant drawing (thus, redrawing).  Other frequently executed tasks in a game include updating (e.g., updating the location of all the items in the game) and initialization (e.g., putting the character at a particular starting position).  Therefore, it is important that your code for this assignment is well thought out and implemented as it will be reused for the next assignment.</p>
+
+<h2>Calling a JavaScript Function On Page Load</h2>
+<p>When a web page has completely loaded all content (including images, JavaScript files, CSS files, etc.), you can execute JavaScript code immediately via the <code>onload</code> attribute for the <code>body</code> element.  That is:</p>
+
+<pre>
+&lt;body onload="<span class="stress">SomeJavaScriptCode</span>"&gt;
+</pre>
+
+<h2>Viewing Your Work</h2>
+<p>Open the <code>index.html</code> file on a web browser on your web browsers (Chrome, Firefox, Safari, the latest version of Microsoft Internet Explorer)</p>
+<p class="note">For obvious reasons, you are not allowed to make your work publicly accessibly on the web --yet.</p>
 
 <!-- So I ripped this off from Norman Ramsey at http://www.cs.tufts.edu/comp/105/details.html -->
 <h2><span class="note">(Course Policy)</span> The <code>README</code> File</h2>
@@ -78,13 +114,12 @@
 <h2>Assessment Rubric</h2>
 <p>For this assignment, you will be assessed on a scale: from "excellent" to "no credit."  This is also the similar scale used by the National Science Foundation.</p>
 <ul>
-<li><span class="stress">Excellent</span> - (equivalent to a 95); documentation addresses exactly the key issues, and degree of detail is exactly appropriate; no errors on the JavaScript console; well thought out and implemented code; winning and losing conditions in the game exist; completely animated sprites (e.g., frog, obstacles); collisions are detected; scoring exist; lives exist</li>
-<li><span class="stress">Very Good</span> - (equivalent to an 85); high quality in nearly all respects; documentation addresses most key issues, with a good amount of detail; no errors on the JavaScript console; well chosen names for functions and their parameters; game is functional with non-moving; collisions are detected.</li>
-<li><span class="stress">Good</span> - (equivalent to a 75); demonstrates quality and significant learning; documentation covers some key issues; individual functions are organized and readable; most names chosen well, but their may be some exceptions; JavaScript errors exist in console; errors may be evident from reading the code; graphics are rendered; game is functional by moving the frog from starting point to lilly pad; animation of frog exists</li>
-<li><span class="stress">Fair</span> - (equivalent to a 65); the lowest satisfactory grade; very little documentation; unreadable code; errors appear in JavaScript console; game does not work but graphics are rendered</li>
+<li><span class="stress">Excellent</span> - (equivalent to a 95); documentation addresses exactly the key issues, and degree of detail is exactly appropriate; no errors on the JavaScript console; well thought out and implemented code; no errors on the JavaScript console</li>
+<li><span class="stress">Very Good</span> - (equivalent to an 85); high quality in nearly all respects; documentation addresses most key issues, with a good amount of detail; no errors on the JavaScript console; well chosen names for functions and their parameters.</li>
+<li><span class="stress">Good</span> - (equivalent to a 75); demonstrates quality and significant learning; documentation covers some key issues; individual functions are organized and readable; most names chosen well, but their may be some exceptions; JavaScript errors exist in console; errors may be evident from reading the code; graphics may be rendered</li>
+<li><span class="stress">Fair</span> - (equivalent to a 65); the lowest satisfactory grade; very little documentation; unreadable code; errors appear in JavaScript console; some graphics may be rendered</li>
 <li><span class="stress">Poor</span> - (equivalent to a 55); an unsatisfactory grade; work shows little evidence of effort or has other serious deficiencies; no documentation (e.g., no <code>README</code>); game does not work; no graphics rendered; errors appear in JavaScript console.</li>
 <li><span class="stress">No Credit</strong> - (equivalent to a 0); for work not turned in, for parts that are incomplete, or for work that is non-functional or appears to bear no relation to the problems assigned. <span class="note">You will receive No Credit for work that you cannot explain!</span></li>
-<li><span class="stress">Uber</span> - (equivalent to a 105, BONUS!) game has all the bell-and-whistles including sound, level progression (i.e., game gets progressively harder), and tracking high scores</li>
 </ul>
 
 <h2>Submitting the Lab</h2>
